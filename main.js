@@ -21,13 +21,13 @@ function addList(e) {
     // Attaching Add card button
     let btnAddCard = document.createElement('button');
     btnAddCard.className = 'addCard';
-    btnAddCard.appendChild(document.createTextNode('Add Card'));
+    btnAddCard.appendChild(document.createTextNode('+'));
     liAddList.appendChild(btnAddCard);
 
     // Attaching Delete button
     let btnDelete = document.createElement('button');
     btnDelete.className = 'delete';
-    btnDelete.appendChild(document.createTextNode('Delete'));
+    btnDelete.appendChild(document.createTextNode('X'));
     liAddList.appendChild(btnDelete);
 }
 

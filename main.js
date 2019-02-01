@@ -11,6 +11,8 @@ function addList(e) {
     let inputValue = inputAddList.value;
     //Creating node li
     let liAddList = document.createElement('li');
+    liAddList.className = 'li_column';
+    console.log(liAddList);
     // Not allowing to add repeated input
     if (inputValue === '') {
         alert('You must write something!');

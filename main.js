@@ -17,14 +17,25 @@ function addList(e) {
     if (inputValue === '') {
         alert('You must write something!');
     } else {
-        liAddList.appendChild(document.createTextNode(inputValue)); 
+    // Changed fom textnode to an input so that the title of the list can be edited by a user - Joanna
+        let listTitle = document.createElement('input');
+        listTitle.value = inputValue;
+        listTitle.classList.add('list-title');
+        liAddList.appendChild(listTitle);
         ulAddList.appendChild(liAddList);
     }
+
+    // Creating a card container to more easily append a card into - Joanna
+    let itemContainer = document.createElement('div');
+    itemContainer.classList.add('item-container');
+    liAddList.appendChild(itemContainer);
 
     // Attaching Add card button
     let btnAddCard = document.createElement('button');
     btnAddCard.className = 'addCard';
     btnAddCard.textContent = "+ Add Card";
+    // Added an eventlistener on the add card button - Joanna
+    btnAddCard.addEventListener('click', addCard);
     //btnAddCard.appendChild(document.createTextNode('+'));
     liAddList.appendChild(btnAddCard);
 
@@ -48,8 +59,7 @@ function removeList(e) {
 }
 
 //Add card event
-ulAddList.addEventListener('click', addCard);
+/*ulAddList.addEventListener('click', addCard);
 function addCard(e){
     e.preventDefault();
-}
-
+}*/

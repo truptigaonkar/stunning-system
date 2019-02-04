@@ -1,70 +1,121 @@
 body{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f4f4f4e1;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f4f4e1;
+  background-image: url(https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg);
+  /*
+  background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/06/Simple-wallpapers-HD-for-desktop.png);
+  background-image: url(https://i.imgur.com/FZwh6nb.png);
+  background-image: url(https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg);
+  background-image: url(https://s3-eu-west-1.amazonaws.com/images.danb.me/trello-backgrounds/purple.jpg);
+  */
 }
-header, footer{
-    background-color: darkgray;
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    color: white;
-    text-align: center;
-    max-height: 500px;
+
+header {
+  background-color: #a9a9a900;
+  text-align: center;
+  line-height: 45px;
+  box-shadow: -2px -6px 20px 9px #545454b5;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+  border-bottom: 3px solid yellow;
 }
+
+.container {
+  text-align: left;
+}
+
+.addList-field {
+  display: inline-block;
+}
+
 main{
-    height: 500px;
-    margin: 15px;
+  height: 500px;
+  margin: 15px;
+  margin-top: 25px;
 }
+
+.addList-input {
+  outline: none;
+  margin-right: -4px;
+  height: 36px;
+  padding-left: 10px;
+  margin-top: 0px;
+  background-color: #ffeb3b73;
+  border-style: none;
+  font-size: 13px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+}
+
+#btnAddList{
+  outline: none;
+  height: 38px;
+  border-color: transparent;
+  margin-top: 2px;
+  background-color: #ffeb3b73;
+  font-size: 13px;
+}
+
 ul{
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
+  margin-top: 25px;
+  overflow-x: scroll;
+  padding-bottom: 40px;
+  padding-left: 0;
 }
+
 ul li{
-    position: relative;
-    width: 275px;
-    height: 100%;
-    border-radius: 5px;
-    background-color: #e0e0e073;
-    font-weight: bold;
-    margin-right: 10px;
+  position: relative;
+  min-width: 275px;
+  max-height: 568px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #3a3a3a57;
+  font-weight: bold;
+  margin-right: 10px;
+  overflow: scroll;
 }
 .deleteList{
-    position: absolute;
-    right: 0;
-    top: 0;
-    background:transparent;
-    border:none;
-    outline:none;
-    display:block;
-    font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background:transparent;
+  border:none;
+  outline:none;
+  display:block;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 .deleteList:hover{
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    background-color: gray;
+  cursor: pointer;
+  background-color: #ffeb3b73;
 }
 .addCard{
-    background:transparent;
-    border:none;
-    outline:none;
-    display:block;
-    opacity: 1;
-    color: #000; /* Changed color to black so it can more easily be seen */
-    /*position: absolute; Removed position absolute so that the add card button is positioned beneath each new card*/
-    position: relative;
-    left: 0;
-    font-weight: bold;
-    margin-bottom: 6px;
-    margin-top: -5px;
+  background:transparent;
+  border:none;
+  outline:none;
+  display:block;
+  opacity: 1;
+  color: #000; /* Changed color to black so it can more easily be seen */
+  /*position: absolute; Removed position absolute so that the add card button is positioned beneath each new card*/
+  position: relative;
+  left: 0;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 12px;
 }
 .addCard:hover{
-    cursor: pointer;
-    width: 275px;
-    height: 20px;
-    background-color: gray;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #ffeb3b73;
+  text-align: left;
+  border-radius: 0 0 5px 5px;
 }
 
 .item-container {
@@ -130,8 +181,4 @@ textarea:focus {
   margin-left: 5px;
   margin-top: 3px;
   margin-bottom: 3px;
-}
-
-.addList-input {
-  outline: none;
 }

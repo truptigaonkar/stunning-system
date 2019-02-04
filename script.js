@@ -8,6 +8,11 @@ function addCard(event) {
   textarea.placeholder = 'Enter a title for this card...';
   textarea.setAttribute('spellcheck', false);
   createDeleteButton(item);
+
+  // Date when item was created --- Trupti
+  let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE"));
+  item.appendChild(dateItemCreation);
+
   item.appendChild(textarea);
   event.target.parentNode.querySelector('.item-container').appendChild(item);
 }

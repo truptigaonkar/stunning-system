@@ -1,3 +1,5 @@
+'use strict';
+
 let addCardButton = document.querySelector('.addCard');
 
 function addCard(event) {
@@ -8,16 +10,24 @@ function addCard(event) {
   textarea.placeholder = 'Enter a title for this card...';
   textarea.setAttribute('spellcheck', false);
   createDeleteButton(item);
-
+  //
   // Date when item was created --- Trupti
-  let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE"));
+  //
+  
+  /*Trupti I have only changed your localDate settings because I'm interesting 
+  att see clock time. thx*/
+  //
+  //let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE")); 
+  let dateItemCreation = document.createTextNode(new Date().toLocaleString("sv-SE"));
   item.appendChild(dateItemCreation);
 
   item.appendChild(textarea);
   event.target.parentNode.querySelector('.item-container').appendChild(item);
   //
-  // Here begins Ricardo´s coden in Joanna´s addCard function
-  // 
+  // Kontroll PopUp when item is DoubleClicked. --- Ricardo
+  //
+  // (note: dbclick is activated on textarea´s item ('textarea') because it has the largest area for do it 
+  // comfortable and also textarea has pointerfinger activated )
   textarea.addEventListener('dblclick',function(event){controlPopUp(event)});
 }
 
@@ -32,53 +42,65 @@ function createDeleteButton(item) {
   });
 }
 //
+//
 /*********************** Ricardo ********************/
 //
+//
 function controlPopUp (event) {
-    event.stopPropagation();
-    event.preventDefault();
-    //if (det finns info created, hoppas creating delen och only show)
-    //Create container for describing box
-    console.log(event);
-    /// aqui consigo el titulo de la card
-    console.log(event.target.value);
-    //
-
-    let vDiv = document.createElement('div');
-    vDiv.className = 'popup-container';
-    let vForm = document.createElement('form');
-    vForm.className = 'popup-form';
-    //Create aditional title
-    let vCardTitle = document.createElement('input');
-    vCardTitle.setAttribute('placeholder','  Add aditional Title');
-    vCardTitle.setAttribute('type','text');
-    vCardTitle.className = 'popup-form__input';
-    //
-    //datum
-    let vKlockan = document.createElement('h4');
-    let datum  = new Date();
-    console.log(datum.toLocaleString('sv-SE'));
-    vKlockan.textContent = ` Card has been created ${datum} `;
-    //
-    // provisionellt Arkitektur
-    //event.target.parentNode.querySelector('.item-container').appendChild(item);
-    //vBody.appendChild(vDiv);
-    vDiv.appendChild(vKlockan);
-    vDiv.appendChild(vForm);
-    vForm.appendChild(vCardTitle);
-    event.target.parentNode.appendChild(vDiv);
-    
-    //
-    
-    
-
+  //
+  event.stopPropagation();
+  event.preventDefault();
+  console.log(event);
+  let vTitle = document.createElement('h1');
+  //
+  /* With next (if) conditional we control if is the first time that we opens the 
+  popup and creates elements /or/ we reopen popup and we must conserve old info and only display */
+  /* we do it throw att see if the last children of (list-item) is the doubecliked textarea or is 
+  en div (popup-container)*/
+  //
+  if (event.target.parentNode.lastChild.className === ''){
+   console.log('card have not popup ');
+   let vDivPopUP = document.createElement('div');
+   vDivPopUP.className = 'popup-container';
+   //
+   //readTitle();
+   let vTitle = document.createElement('h1');
+   vTitle.textContent = event.target.value;
+   vTitle.classList.add('popup-container__title');
+   //
+   let vDatum = document.createElement('h3');
+   vDatum.textContent = event.target.previousSibling.textContent;
+   vDatum.classList.add('popup-container__datum');
+   //
+   let description = document.createElement('textarea');
+   description.placeholder = 'Fill here detailed description...';
+   description.classList.add('popup-container__textarea');
+   //
+   vDivPopUP.appendChild(vTitle);
+   vDivPopUP.appendChild(vDatum);
+   vDivPopUP.appendChild(description);
+   createHidePopupButton(vDivPopUP);
+   //
+   event.target.parentNode.appendChild(vDivPopUP);
+  }else if(event.target.parentNode.lastChild.className === 'popup-container'){ 
+    console.log('Item selected have en popup created');
+    /*Here I refresh Title to accept the possibility that user re-edit it later*/
+    event.target.parentNode.lastChild.firstChild.textContent = event.target.value;
+    /* display popup*/
+    event.target.parentNode.lastChild.style.display = 'block';
+  }else{
+    console.log("Somthing wrong i coden. Contacta gruppen");
+  }
 }
 
-function testcb(){
-  console.log("doubleclick event ");
+function createHidePopupButton(vDivPopUP) {
+  let hideButton = document.createElement('button');
+  hideButton.classList.add('popup-container__button');
+  hideButton.setAttribute('type', 'button');
+  hideButton.innerHTML = 'Close';
+  vDivPopUP.appendChild(hideButton);
+  hideButton.addEventListener('click', function(event) {
+  event.target.parentNode.style.display = 'none';
+  });
 }
 
-// la segunda vez que clickemos si tiene ya el hijo, no creamos,
-//solo visualizamos// chekeamos si tiene algun alemento como hijo del formulario
-
-//createPop();

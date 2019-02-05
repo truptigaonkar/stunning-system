@@ -184,3 +184,50 @@ textarea:focus {
   margin-top: 3px;
   margin-bottom: 3px;
 }
+
+/* classes for popup and .. --Ricardo */
+
+.popup-container{
+  position: fixed;
+  box-sizing: border-box;
+  background-color: #ffeb3b;
+  z-index: 100;
+  width: 300px;
+  min-height: 400px;
+  top: 10%;
+  left: 30%;
+  border-radius: 10px;
+  word-wrap: break-word;
+
+}
+
+.popup-container__title{
+  box-sizing: border-box;
+  margin: 15px 20px;
+  text-align: left;
+  
+
+}
+
+.popup-container__datum{
+  box-sizing: border-box;
+  margin: 15px 20px;
+  text-align: left;
+  font-size: 18px;
+
+}
+
+.popup-container__textarea{
+  box-sizing: border-box;
+  margin: 20px 20px;
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+.popup-container__button{
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  
+
+}

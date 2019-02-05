@@ -1,4 +1,5 @@
 'use strict';
+/*********************** Joanna ********************/
 
 let addCardButton = document.querySelector('.addCard');
 

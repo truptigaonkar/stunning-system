@@ -7,6 +7,9 @@ function addCard(event) {
   event.preventDefault();
   let item = document.createElement('div');
   item.classList.add('list-item');
+  //
+  item.setAttribute('draggable','true'); // line for drag@drop added by --Ricardo
+  //
   let textarea = document.createElement('textarea');
   textarea.placeholder = 'Enter a title for this card...';
   textarea.setAttribute('spellcheck', false);
@@ -14,9 +17,8 @@ function addCard(event) {
   //
   // Date when item was created --- Trupti
   //
-  
-  /*Trupti I have only changed your localDate settings because I'm interesting 
-  att see clock time. thx*/
+  /* dear Trupti, I have only changed your localDate settings because I'm interesting 
+  att see clock time. thx --Ricardo */
   //
   //let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE")); 
   let dateItemCreation = document.createTextNode(new Date().toLocaleString("sv-SE"));
@@ -25,8 +27,7 @@ function addCard(event) {
   item.appendChild(textarea);
   event.target.parentNode.querySelector('.item-container').appendChild(item);
   //
-  // Kontroll PopUp when item is DoubleClicked. --- Ricardo
-  //
+  // Kontroll PopUp when item is DoubleClicked. -- Ricardo
   // (note: dbclick is activated on textarea´s item ('textarea') because it has the largest area for do it 
   // comfortable and also textarea has pointerfinger activated )
   textarea.addEventListener('dblclick',function(event){controlPopUp(event)});

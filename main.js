@@ -36,6 +36,8 @@ function addList(e) {
     // Creating a card container to more easily append a card into - Joanna
     let itemContainer = document.createElement('div');
     itemContainer.classList.add('item-container');
+    //
+    //add ondrop="drop(event)" ondragover="allowDrop(event)
     liAddList.appendChild(itemContainer);
 
 

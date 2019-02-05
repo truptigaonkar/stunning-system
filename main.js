@@ -17,7 +17,9 @@ function addList(e) {
     console.log(liAddList);
     // Not allowing to add repeated input
     if (inputValue === '') {
-        alert('You must write something!');
+        //alert('You must write something!');
+        inputAddList.classList.add("inputAddList__placeholder");
+        inputAddList.placeholder = "You must write something!";
     } else {
     // Changed fom textnode to an input so that the title of the list can be edited by a user - Joanna
         let listTitle = document.createElement('input');
@@ -58,10 +60,10 @@ ulAddList.addEventListener('click', removeList);
 function removeList(e) {
   e.preventDefault();
     if (e.target.classList.contains('deleteList')) {
-        if (confirm('Are you sure want to delete the element?')) {
+        // if (confirm('Are you sure want to delete the element?')) {
             let li = e.target.parentElement;
             ulAddList.removeChild(li);
-        }
+        // }
     }
 }
 

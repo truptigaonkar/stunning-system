@@ -78,6 +78,10 @@ ul li{
   margin-right: 10px;
   overflow: scroll;
 }
+/* pseudo class to add red color to placeholder after clicking add list button */
+.inputAddList__placeholder::placeholder{
+  color: red;
+}
 .deleteList{
   position: absolute;
   right: 0;

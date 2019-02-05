@@ -30,6 +30,10 @@ function addList(e) {
     itemContainer.classList.add('item-container');
     liAddList.appendChild(itemContainer);
 
+    // Creating a eventListener for itemContainer for create or call popUp.-DoubleClick- Ricardo
+    //itemContainer.addEventListener('doubleclick', testcb);
+
+
     // Attaching Add card button
     let btnAddCard = document.createElement('button');
     btnAddCard.className = 'addCard';

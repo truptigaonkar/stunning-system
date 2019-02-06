@@ -9,6 +9,11 @@ function addCard(event) {
   item.classList.add('list-item');
   //
   item.setAttribute('draggable','true'); // line for drag@drop added by --Ricardo
+  // Listeners for 'draggable' items (.list-item) -- Ricardo
+  item.addEventListener('dragstart',dragStart);
+  item.addEventListener('dragend',dragEnd);
+  //
+  //
   //
   let textarea = document.createElement('textarea');
   textarea.placeholder = 'Enter a title for this card...';
@@ -108,3 +113,22 @@ function createHidePopupButton(vDivPopUP) {
   });
 }
 
+// Drag Functions for (.list-item) --Ricardo
+
+function dragStart () {
+  console.log('start');
+  /* Nu ska vi lägga till klassen (.hold) till elementet  
+  som vi har tagit */
+  this.className += ' hold'; 
+  /* Här ger vi en försvinn effekt för att göra 
+  mer klart vilket item har vi tagit. Å andra sidan med setTimeOut
+  vi undvik att item förssvinner innan vi har moved element*/ 
+  setTimeout(()=>{this.className = 'invisible'},0);
+}
+
+
+function dragEnd () {
+  console.log('end');
+  /*vi får primitiva utseende med primitiva klassen*/
+  this.className = 'list-item';
+}

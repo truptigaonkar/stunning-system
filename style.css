@@ -126,6 +126,9 @@ ul li{
   display: flex;
   flex-direction: column;
   min-height: 50px;
+  /*next lines for drag&drop -- Ricardo */
+
+
 }
 
 .list-item {
@@ -137,13 +140,14 @@ ul li{
   margin-left: 10px;
   text-align: end;
   font-size: 10px;
-  /*for drag&drop -- Ricardo */
+  /*next lines for drag&drop -- Ricardo */
   /* check if can i drop direct from textarea*/
   cursor: move;
 }
 
 .list-item:hover {
   background-color: #fffcdeb5;
+  
 }
 
 textarea {
@@ -233,5 +237,27 @@ textarea:focus {
   bottom: 15px;
   right: 20px;
   
+
+}
+
+/* classes for drag&drop. --Ricardo */
+
+/* i (.hold) finns ett speciellt utseende for draggable-item
+ när man klicka mouse på item och behåller clikcat och röra sig
+element på skärm */
+.hold{
+  border: solid #ffeb3b 4px;
+}
+
+/* i (.hovered) finns ett speciellt utseende for containers
+när man är över en potential container */
+.hovered {
+  border: 2px dashed #67f667;
+
+}
+
+/* */
+.invisible{
+  display: none;
 
 }

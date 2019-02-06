@@ -37,6 +37,14 @@ function addList(e) {
     let itemContainer = document.createElement('div');
     itemContainer.classList.add('item-container');
     //
+    // Listeners for item´s container (.item-container) -- Ricardo
+    itemContainer.addEventListener('dragover',dragOver);
+    itemContainer.addEventListener('dragenter',dragEnter);
+    itemContainer.addEventListener('dragleave',dragLeave);
+    itemContainer.addEventListener('drop',dragDrop);
+
+ 
+    //
     //add ondrop="drop(event)" ondragover="allowDrop(event)
     liAddList.appendChild(itemContainer);
 
@@ -71,8 +79,36 @@ function removeList(e) {
     }
 }
 
-//Add card event
-/*ulAddList.addEventListener('click', addCard);
-function addCard(e){
+// Drag Functions for (.item-container) --Ricardo 
+
+function dragOver (e) {
     e.preventDefault();
-}*/
+    console.log('over');
+    // body... 
+}
+
+function dragEnter (e) {
+    e.preventDefault();
+    console.log('enter');
+    this.className += ' hovered';
+    // body... 
+}
+
+function dragLeave (e) {
+    console.log('leave');
+    this.className = 'item-container';
+    // body... 
+}
+
+function dragDrop (e) {
+    //console.log(e);
+    console.log('drop');
+    /*här skulle man
+     append item i den nya container 
+    igenom (append() men dyker upp problemet att jag vet inte preciss
+    vilket item har jag tagit, då jag kommer tillbaka till 
+    item functions för att skapa någon flag ( jag planerar att
+    skapa en temporary #id vilken jag kan använda här)*/
+    let vSelectedItem = document.querySelector('#selected');
+    this.append(vSelectedItem); 
+}

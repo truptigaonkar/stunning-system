@@ -4,12 +4,6 @@ body{
   font-family: sans-serif;
   background-color: #f4f4f4e1;
   background-image: url(https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg);
-  /*
-  background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/06/Simple-wallpapers-HD-for-desktop.png);
-  background-image: url(https://i.imgur.com/FZwh6nb.png);
-  background-image: url(https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg);
-  background-image: url(https://s3-eu-west-1.amazonaws.com/images.danb.me/trello-backgrounds/purple.jpg);
-  */
 }
 
 header {
@@ -79,10 +73,16 @@ ul li{
   margin-right: 10px;
   overflow: scroll;
 }
-/* pseudo class to add red color to placeholder after clicking add list button */
+
+ul::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .inputAddList__placeholder::placeholder{
   color: red;
 }
+
 .deleteList{
   position: absolute;
   right: 0;
@@ -95,18 +95,19 @@ ul li{
   margin-right: 5px;
   margin-top: 5px;
 }
+
 .deleteList:hover{
   cursor: pointer;
   background-color: #ffeb3b73;
 }
+
 .addCard{
-  background:transparent;
-  border:none;
-  outline:none;
-  display:block;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: block;
   opacity: 1;
-  color: #000; /* Changed color to black so it can more easily be seen */
-  /*position: absolute; Removed position absolute so that the add card button is positioned beneath each new card*/
+  color: #000;
   position: relative;
   left: 0;
   font-weight: bold;
@@ -114,6 +115,7 @@ ul li{
   padding-top: 10px;
   font-size: 12px;
 }
+
 .addCard:hover{
   cursor: pointer;
   width: 100%;
@@ -138,6 +140,7 @@ ul li{
   margin-left: 10px;
   text-align: end;
   font-size: 10px;
+  cursor: move;
 }
 
 .list-item:hover {
@@ -158,10 +161,6 @@ textarea {
 textarea:focus {
   color: #000;
 }
-
-/*textarea::-webkit-input-placeholder {
-  color: #fff;
-}*/
 
 .delete-item {
   position: absolute;
@@ -186,8 +185,6 @@ textarea:focus {
   margin-bottom: 3px;
 }
 
-/* classes for popup and .. --Ricardo */
-
 .popup-background {
   display: none;
   position: relative;
@@ -211,6 +208,7 @@ textarea:focus {
   margin: 0 auto;
   position: relative;
   top: 100px;
+  box-shadow: 0px 5px 60px #5d5d5d;
 }
 
 .popup-container__title{
@@ -223,9 +221,10 @@ textarea:focus {
   outline: none;
   border-style: none;
   margin-right: 150px;
-  height: 20px;
+  height: 35px;
   width: 260px;
-  font-size: 13px;
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
 .popup-container__datum{
@@ -233,7 +232,6 @@ textarea:focus {
   margin: 15px 20px;
   text-align: left;
   font-size: 18px;
-
 }
 
 .popup-container__textarea{
@@ -241,13 +239,22 @@ textarea:focus {
   margin: 20px 20px;
   padding-right: 20px;
   font-size: 18px;
-
 }
 
 .popup-container__button{
   position: absolute;
   bottom: 15px;
   right: 20px;
+}
 
+.hold{
+  border: solid #ffeb3b 4px;
+}
 
+.hovered {
+  border: 2px dashed #67f667;
+}
+
+.invisible{
+  display: none;
 }

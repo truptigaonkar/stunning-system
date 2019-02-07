@@ -13,11 +13,11 @@ function addCard(event) {
   //
   // Date when item was created --- Trupti
   //
-  
-  /*Trupti I have only changed your localDate settings because I'm interesting 
+
+  /*Trupti I have only changed your localDate settings because I'm interesting
   att see clock time. thx*/
   //
-  //let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE")); 
+  //let dateItemCreation = document.createTextNode(new Date().toLocaleDateString("en-SE"));
   let dateItemCreation = document.createTextNode(new Date().toLocaleString("sv-SE"));
   item.appendChild(dateItemCreation);
 
@@ -26,7 +26,7 @@ function addCard(event) {
   //
   // Kontroll PopUp when item is DoubleClicked. --- Ricardo
   //
-  // (note: dbclick is activated on textarea´s item ('textarea') because it has the largest area for do it 
+  // (note: dbclick is activated on textarea´s item ('textarea') because it has the largest area for do it
   // comfortable and also textarea has pointerfinger activated )
   textarea.addEventListener('dblclick',function(event){controlPopUp(event)});
 }
@@ -53,9 +53,9 @@ function controlPopUp (event) {
   console.log(event);
   let vTitle = document.createElement('h1');
   //
-  /* With next (if) conditional we control if is the first time that we opens the 
+  /* With next (if) conditional we control if is the first time that we opens the
   popup and creates elements /or/ we reopen popup and we must conserve old info and only display */
-  /* we do it throw att see if the last children of (list-item) is the doubecliked textarea or is 
+  /* we do it throw att see if the last children of (list-item) is the doubecliked textarea or is
   en div (popup-container)*/
   //
   if (event.target.parentNode.lastChild.className === ''){
@@ -64,7 +64,10 @@ function controlPopUp (event) {
    vDivPopUP.className = 'popup-container';
    //
    //readTitle();
-   let vTitle = document.createElement('h1');
+   let vTitle = document.createElement('input');
+   /*if (event.target.value === '') {
+     vTitle.placeholder = 'Enter a title for this card...';
+   }*/
    vTitle.textContent = event.target.value;
    vTitle.classList.add('popup-container__title');
    //
@@ -73,9 +76,11 @@ function controlPopUp (event) {
    vDatum.classList.add('popup-container__datum');
    //
    let description = document.createElement('textarea');
+   // Removed spellcheck to avoid red underlines - Joanna
+   description.setAttribute('spellcheck', false);
    description.setAttribute('cols', '25');
    description.setAttribute('rows', '10');
-   description.placeholder = 'Fill here detailed description...';
+   description.placeholder = 'Fill in detailed description here...';
    description.classList.add('popup-container__textarea');
    //
    vDivPopUP.appendChild(vTitle);
@@ -83,16 +88,22 @@ function controlPopUp (event) {
    vDivPopUP.appendChild(description);
    createHidePopupButton(vDivPopUP);
    //
-   event.target.parentNode.appendChild(vDivPopUP);
-  }else if(event.target.parentNode.lastChild.className === 'popup-container'){ 
-    console.log('Item selected have en popup created');
+   let popupBackground = document.querySelector('.popup-background');
+   popupBackground.appendChild(vDivPopUP);
+   //event.target.parentNode.appendChild(vDivPopUP);
+  }else if(event.target.parentNode.lastChild.className === 'popup-container'){
+    console.log('Item selected have a popup created');
     /*Here I refresh Title to accept the possibility that user re-edit it later*/
     event.target.parentNode.lastChild.firstChild.textContent = event.target.value;
     /* display popup*/
     event.target.parentNode.lastChild.style.display = 'block';
   }else{
-    console.log("Somthing wrong i coden. Contacta gruppen");
+    console.log("Something wrong in code. Contact the group");
   }
+  // Showing background for the popup - Joanna
+  let popupBackground = document.querySelector('.popup-background')
+  popupBackground.style.backgroundColor = '#00000069';
+  popupBackground.style.display = 'block';
 }
 
 function createHidePopupButton(vDivPopUP) {
@@ -103,6 +114,9 @@ function createHidePopupButton(vDivPopUP) {
   vDivPopUP.appendChild(hideButton);
   hideButton.addEventListener('click', function(event) {
   event.target.parentNode.style.display = 'none';
+  // Hiding popup background again - Joanna
+  let popupBackground = document.querySelector('.popup-background');
+  popupBackground.style.backgroundColor = 'transparent';
+  popupBackground.style.display = 'none';
   });
 }
-

@@ -21,11 +21,14 @@ function addList(e) {
         inputAddList.classList.add("inputAddList__placeholder");
         inputAddList.placeholder = "You must write something!";
     } else {
-    // Changed fom textnode to an input so that the title of the list can be edited by a user - Joanna
+      // Removed placeholder class so that the text goes back to initial color - Joanna  
+        inputAddList.placeholder = 'Enter list title.....'
+        inputAddList.classList.remove("inputAddList__placeholder")
+      // Changed fom textnode to an input so that the title of the list can be edited by a user - Joanna
         let listTitle = document.createElement('input');
         listTitle.value = inputValue;
         listTitle.classList.add('list-title');
-    // Removed spellcheck to avoid red underlines - Joanna    
+    // Removed spellcheck to avoid red underlines - Joanna
         listTitle.setAttribute('spellcheck', false);
         liAddList.appendChild(listTitle);
         ulAddList.appendChild(liAddList);

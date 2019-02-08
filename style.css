@@ -43,7 +43,15 @@ main{
   padding-top: -1px;
   width: 170px;
 }
-
+.addList-input:focus{
+  cursor: pointer;
+  border: 2px solid white;
+}
+#btnAddList:hover{
+  cursor: pointer;
+  color: green;
+  font-weight: bold;
+}
 #btnAddList{
   outline: none;
   height: 38px;
@@ -72,6 +80,14 @@ ul li{
   font-weight: bold;
   margin-right: 10px;
   overflow: scroll;
+}
+.li_column input{
+  color: darkblue;
+}
+.li_column input:focus{
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid blue;
 }
 
 ul::-webkit-scrollbar {

@@ -63,6 +63,7 @@ function controlPopUp (event) {
    vTitle.placeholder = 'Enter a title for this card...';
    vTitle.value = target.value;
    vTitle.classList.add('popup-container__title');
+   vTitle.setAttribute('spellcheck', false);
    vTitle.addEventListener('input', function(event) {
      target.value = vTitle.value;
    });

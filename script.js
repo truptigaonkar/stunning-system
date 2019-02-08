@@ -78,8 +78,8 @@ function controlPopUp (event) {
    description.placeholder = 'Fill here detailed description...';
    description.classList.add('popup-container__textarea');
 
-   vDivPopUP.appendChild(vTitle);
    vDivPopUP.appendChild(vDatum);
+   vDivPopUP.appendChild(vTitle);
    vDivPopUP.appendChild(description);
    createHidePopupButton(vDivPopUP);
 
@@ -99,7 +99,7 @@ function createHidePopupButton(vDivPopUP) {
   let hideButton = document.createElement('button');
   hideButton.classList.add('popup-container__button');
   hideButton.setAttribute('type', 'button');
-  hideButton.innerHTML = 'Close';
+  hideButton.innerHTML = 'X';
   vDivPopUP.appendChild(hideButton);
   hideButton.addEventListener('click', function(event) {
     event.target.parentNode.style.display = 'none';

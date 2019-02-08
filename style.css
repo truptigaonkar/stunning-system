@@ -43,7 +43,15 @@ main{
   padding-top: -1px;
   width: 170px;
 }
-
+.addList-input:focus{
+  cursor: pointer;
+  border: 2px solid white;
+}
+#btnAddList:hover{
+  cursor: pointer;
+  color: green;
+  font-weight: bold;
+}
 #btnAddList{
   outline: none;
   height: 38px;
@@ -72,6 +80,14 @@ ul li{
   font-weight: bold;
   margin-right: 10px;
   overflow: scroll;
+}
+.li_column input{
+  color: darkblue;
+}
+.li_column input:focus{
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid blue;
 }
 
 ul::-webkit-scrollbar {
@@ -201,7 +217,7 @@ textarea:focus {
 
 .popup-container{
   background-color: #ffeb3b;
-  width: 300px;
+  width: 600px;
   min-height: 400px;
   border-radius: 10px;
   word-wrap: break-word;
@@ -226,12 +242,17 @@ textarea:focus {
   font-size: 16px;
   margin-bottom: 0;
 }
+.popup-container__title:focus{
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid blue;
+}
 
 .popup-container__datum{
   box-sizing: border-box;
   margin: 15px 20px;
-  text-align: left;
-  font-size: 18px;
+  text-align: right;
+  font-size: 12px;
 }
 
 .popup-container__textarea{
@@ -240,13 +261,26 @@ textarea:focus {
   padding-right: 20px;
   font-size: 18px;
 }
+.popup-container__textarea:focus{
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid blue;
+}
 
 .popup-container__button{
   position: absolute;
   bottom: 15px;
   right: 20px;
+  background:transparent;
+  border:none;
+  outline:none;
+  display:block;
+  font-weight: bold;
 }
-
+.popup-container__button:hover{
+  cursor: pointer;
+  background-color: 	#CCCC00;
+}
 .hold{
   border: solid #ffeb3b 4px;
 }

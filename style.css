@@ -39,17 +39,16 @@ main{
   background-color: #ffeb3b73;
   border-style: none;
   font-size: 13px;
-  padding-bottom: 2px;
-  padding-top: -1px;
+  padding-bottom: 1px;
   width: 170px;
 }
 .addList-input:focus{
   cursor: pointer;
-  border: 2px solid white;
+  background-color: #ffffa1;
 }
 #btnAddList:hover{
   cursor: pointer;
-  color: green;
+  color: black;
   font-weight: bold;
 }
 #btnAddList{
@@ -80,14 +79,6 @@ ul li{
   font-weight: bold;
   margin-right: 10px;
   overflow: scroll;
-}
-.li_column input{
-  color: darkblue;
-}
-.li_column input:focus{
-  cursor: pointer;
-  background-color: #ffffff;
-  border: 2px solid blue;
 }
 
 ul::-webkit-scrollbar {
@@ -197,8 +188,8 @@ textarea:focus {
   font-size: 18px;
   outline: none;
   margin-left: 8px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .popup-background {
@@ -241,18 +232,21 @@ textarea:focus {
   width: 260px;
   font-size: 16px;
   margin-bottom: 0;
+  padding-left: 12px;
+  margin-top: 0;
 }
 .popup-container__title:focus{
   cursor: pointer;
-  background-color: #ffffff;
-  border: 2px solid blue;
+  background-color: #ffffffa1;
+  padding-left: 12px;
 }
 
 .popup-container__datum{
   box-sizing: border-box;
-  margin: 15px 20px;
+  margin: 15px 15px;
   text-align: right;
   font-size: 12px;
+  padding-top: 15px;
 }
 
 .popup-container__textarea{
@@ -260,22 +254,26 @@ textarea:focus {
   margin: 20px 20px;
   padding-right: 20px;
   font-size: 18px;
+  padding-left: 12px;
+  padding-top: 10px;
 }
 .popup-container__textarea:focus{
   cursor: pointer;
-  background-color: #ffffff;
-  border: 2px solid blue;
+  background-color: #ffffffa1;
+  padding-left: 12px;
+  padding-top: 10px;
 }
 
 .popup-container__button{
   position: absolute;
-  bottom: 15px;
-  right: 20px;
-  background:transparent;
-  border:none;
-  outline:none;
-  display:block;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: block;
   font-weight: bold;
+  font-size: 13px;
 }
 .popup-container__button:hover{
   cursor: pointer;

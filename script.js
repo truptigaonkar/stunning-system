@@ -87,7 +87,7 @@ function controlPopUp (event) {
    popupBackground.appendChild(vDivPopUP);
 
   }else if(!!popupId === true){
-    popupId.firstChild.value = event.target.value;
+    popupId.querySelector('input').value = event.target.value;
     popupId.style.display = 'block';
   }else{
     console.log("Somthing wrong i coden. Contacta gruppen");
@@ -120,8 +120,6 @@ function hidePopupBackground() {
 }
 
 function dragStart (e) {
-  console.log(e);
-  console.log('start');
   this.className += ' hold';
   this.id = 'selected';
   /* Här ger vi en försvinn effekt för att göra

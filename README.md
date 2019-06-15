@@ -1,5 +1,5 @@
 ## YelloTrello - [Live Demo]( https://truptigaonkar.github.io/stunning-system/)
-## Group Project - Communication & Agile project methods
+### Group Project - Communication & Agile project methods
 Build your own Trello (https://trello.com)
 
 ### Instructions
@@ -9,7 +9,7 @@ Build your own Trello (https://trello.com)
 * It is possible to move an item between lists (preferably with drag & drop).
 * No backend connection should be made, but all information should be stored in JS memory.
 
-### OptionalExtra stuff:
+### Optional
 * One should be able to create several "boards"
 * Items should have comments
 
